@@ -1,0 +1,194 @@
+{
+  "validation_summary": {
+    "total_tests": 34,
+    "passed_tests": 34,
+    "failed_tests": 0,
+    "success_rate": "100.0%",
+    "timestamp": "2025-06-15 05:14:39"
+  },
+  "memory_usage": {
+    "peak_memory_mb": 0.0,
+    "final_memory_mb": 0.0,
+    "memory_efficient": true
+  },
+  "test_results": {
+    "File exists: skeletal_muscle_10x_expression.parquet": {
+      "status": true,
+      "message": "1493.1MB"
+    },
+    "File exists: skeletal_muscle_10x_sample_metadata.parquet": {
+      "status": true,
+      "message": "4.3MB"
+    },
+    "File exists: skeletal_muscle_10x_feature_metadata.parquet": {
+      "status": true,
+      "message": "1.0MB"
+    },
+    "File exists: skeletal_muscle_10x_projection_X_scVI.parquet": {
+      "status": true,
+      "message": "34.6MB"
+    },
+    "File exists: skeletal_muscle_10x_projection_X_umap.parquet": {
+      "status": true,
+      "message": "4.1MB"
+    },
+    "File exists: skeletal_muscle_10x_projection_X_pca.parquet": {
+      "status": true,
+      "message": "56.5MB"
+    },
+    "File exists: skeletal_muscle_10x_projection_X_tsne.parquet": {
+      "status": true,
+      "message": "4.1MB"
+    },
+    "File exists: skeletal_muscle_10x_unstructured_metadata.json": {
+      "status": true,
+      "message": "0.0MB"
+    },
+    "File exists: phase2_processing_summary.json": {
+      "status": true,
+      "message": "0.0MB"
+    },
+    "Expression dimensions": {
+      "status": true,
+      "message": "Shape: 183,161 \u00d7 29,400"
+    },
+    "Expression dtype": {
+      "status": true,
+      "message": "Type: float32"
+    },
+    "Expression values": {
+      "status": true,
+      "message": "Sample range: 0.00-0.00"
+    },
+    "Expression index": {
+      "status": true,
+      "message": "Unique: True"
+    },
+    "Sample metadata rows": {
+      "status": true,
+      "message": "183,161 cells"
+    },
+    "Required columns": {
+      "status": true,
+      "message": "All 4 present"
+    },
+    "Age groups": {
+      "status": true,
+      "message": "8 unique groups"
+    },
+    "Cell types": {
+      "status": true,
+      "message": "36 unique types"
+    },
+    "Donors": {
+      "status": true,
+      "message": "17 unique donors"
+    },
+    "Feature metadata rows": {
+      "status": true,
+      "message": "29,400 genes"
+    },
+    "Gene symbols": {
+      "status": true,
+      "message": "100.0% coverage"
+    },
+    "ENSEMBL IDs": {
+      "status": true,
+      "message": "100.0% coverage"
+    },
+    "scVI embedding shape": {
+      "status": true,
+      "message": "183,161 \u00d7 30"
+    },
+    "scVI embedding values": {
+      "status": true,
+      "message": "Sample range: -2.90 to 3.64"
+    },
+    "UMAP projection shape": {
+      "status": true,
+      "message": "183,161 \u00d7 2"
+    },
+    "UMAP projection values": {
+      "status": true,
+      "message": "Sample range: 7.50 to 19.20"
+    },
+    "PCA projection shape": {
+      "status": true,
+      "message": "183,161 \u00d7 50"
+    },
+    "PCA projection values": {
+      "status": true,
+      "message": "Sample range: -30.80 to 17.86"
+    },
+    "t-SNE projection shape": {
+      "status": true,
+      "message": "183,161 \u00d7 2"
+    },
+    "t-SNE projection values": {
+      "status": true,
+      "message": "Sample range: -51.03 to -4.97"
+    },
+    "Unstructured keys": {
+      "status": true,
+      "message": "3/3 keys present"
+    },
+    "JSON format": {
+      "status": true,
+      "message": "Valid JSON structure"
+    },
+    "Index consistency": {
+      "status": true,
+      "message": "All indices match"
+    },
+    "Metadata-projection alignment": {
+      "status": true,
+      "message": "1000 samples tested"
+    },
+    "Visualizations generated": {
+      "status": true,
+      "message": "Saved to processed/validation_visualizations"
+    }
+  },
+  "memory_timeline": [
+    {
+      "stage": "start",
+      "memory_mb": 0.0
+    },
+    {
+      "stage": "file_existence",
+      "memory_mb": 0.0
+    },
+    {
+      "stage": "expression_validation",
+      "memory_mb": 0.0
+    },
+    {
+      "stage": "sample_metadata",
+      "memory_mb": 0.0
+    },
+    {
+      "stage": "feature_metadata",
+      "memory_mb": 0.0
+    },
+    {
+      "stage": "projections",
+      "memory_mb": 0.0
+    },
+    {
+      "stage": "unstructured_metadata",
+      "memory_mb": 0.0
+    },
+    {
+      "stage": "integration_tests",
+      "memory_mb": 0.0
+    },
+    {
+      "stage": "visualizations",
+      "memory_mb": 0.0
+    }
+  ],
+  "visualizations": {
+    "generated": true,
+    "output_directory": "processed/validation_visualizations"
+  }
+}

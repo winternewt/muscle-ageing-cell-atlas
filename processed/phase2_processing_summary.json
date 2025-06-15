@@ -1,0 +1,128 @@
+{
+  "dataset_info": {
+    "shape": [
+      183161,
+      29400
+    ],
+    "method": "10x",
+    "processing_time": "2485.4s",
+    "timestamp": "2025-06-15 02:27:55"
+  },
+  "expression": {
+    "file": "processed/skeletal_muscle_10x_expression.parquet",
+    "shape": [
+      183161,
+      29400
+    ],
+    "memory_gb": 20.06044015288353,
+    "sparsity_percent": 95.41416311666919,
+    "dtype": "float32"
+  },
+  "sample_metadata": {
+    "file": "processed/skeletal_muscle_10x_sample_metadata.parquet",
+    "shape": [
+      183161,
+      16
+    ],
+    "columns": [
+      "SampleID",
+      "DonorID",
+      "Age_group",
+      "Age_bin",
+      "Sex",
+      "batch",
+      "10X_version",
+      "annotation_level0",
+      "annotation_level1",
+      "annotation_level2",
+      "n_counts",
+      "n_genes",
+      "percent_mito",
+      "percent_ribo",
+      "scrublet_score",
+      "age_numeric"
+    ],
+    "missing_columns": [],
+    "age_groups": {
+      "70-75": 59797,
+      "25-30": 30802,
+      "60-65": 29976,
+      "35-40": 29376,
+      "15-20": 23345,
+      "55-60": 5374,
+      "50-55": 4093,
+      "20-25": 398
+    },
+    "cell_types": {
+      "MF-I": 42052,
+      "MF-II": 28558,
+      "FB": 27925,
+      "MuSC": 20215,
+      "SMC": 8049,
+      "T-cell": 7385,
+      "MF-IIsc(fg)": 7075,
+      "MF-Isc(fg)": 5205,
+      "Macrophage": 4723,
+      "NK-cell": 3725
+    }
+  },
+  "feature_metadata": {
+    "file": "processed/skeletal_muscle_10x_feature_metadata.parquet",
+    "shape": [
+      29400,
+      4
+    ],
+    "columns": [
+      "ENSEMBL",
+      "SYMBOL",
+      "n_cells",
+      "gene_ids"
+    ],
+    "has_symbols": true,
+    "has_ensembl": true
+  },
+  "projections": {
+    "X_scVI": {
+      "file": "processed/skeletal_muscle_10x_projection_X_scVI.parquet",
+      "shape": [
+        183161,
+        30
+      ],
+      "computed_now": false
+    },
+    "X_umap": {
+      "file": "processed/skeletal_muscle_10x_projection_X_umap.parquet",
+      "shape": [
+        183161,
+        2
+      ],
+      "computed_now": false
+    },
+    "X_pca": {
+      "file": "processed/skeletal_muscle_10x_projection_X_pca.parquet",
+      "shape": [
+        183161,
+        50
+      ],
+      "computed_now": true
+    },
+    "X_tsne": {
+      "file": "processed/skeletal_muscle_10x_projection_X_tsne.parquet",
+      "shape": [
+        183161,
+        2
+      ],
+      "computed_now": true
+    }
+  },
+  "unstructured": {
+    "file": "processed/skeletal_muscle_10x_unstructured_metadata.json",
+    "key_count": 3,
+    "file_size_mb": 0.0,
+    "top_keys": [
+      "pca",
+      "neighbors",
+      "tsne"
+    ]
+  }
+}

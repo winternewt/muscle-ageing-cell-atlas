@@ -1,0 +1,58 @@
+{
+  "method": "10x",
+  "shape": [
+    183161,
+    29400
+  ],
+  "found_columns": {
+    "age": "Age_group",
+    "sex": "Sex",
+    "cell_type": "annotation_level0",
+    "donor": "DonorID",
+    "batch": "batch"
+  },
+  "obsm_keys": [
+    "X_scVI",
+    "X_umap"
+  ],
+  "var_columns": [
+    "ENSEMBL",
+    "SYMBOL",
+    "n_cells"
+  ],
+  "obs_columns": [
+    "SampleID",
+    "DonorID",
+    "Age_group",
+    "Age_bin",
+    "Sex",
+    "batch",
+    "10X_version",
+    "annotation_level0",
+    "annotation_level1",
+    "annotation_level2",
+    "n_counts",
+    "n_genes",
+    "percent_mito",
+    "percent_ribo",
+    "scrublet_score"
+  ],
+  "sparsity_percent": 95.41416311666919,
+  "age_groups": {
+    "70-75": 59797,
+    "25-30": 30802,
+    "60-65": 29976,
+    "35-40": 29376,
+    "15-20": 23345,
+    "55-60": 5374,
+    "50-55": 4093,
+    "20-25": 398
+  },
+  "cell_type_counts": {
+    "level0": 36,
+    "level1": 43,
+    "level2": 82
+  },
+  "donor_count": 17,
+  "processing_ready": true
+}
