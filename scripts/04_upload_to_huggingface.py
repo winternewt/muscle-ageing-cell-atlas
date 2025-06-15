@@ -67,6 +67,18 @@ def get_files_to_upload(base_path: Path) -> List[tuple[Path, str]]:
         else:
             print(f"⚠️  Missing documentation file: {doc_file}")
     
+    # Processing scripts (put in root and strip numbering prefix)
+    scripts_dir = base_path / "scripts"
+    script_mappings = {
+        "02_data_processing.py": "data_processing.py"  # Strip 02_ prefix and put in root
+    }
+    for script_file, repo_name in script_mappings.items():
+        file_path = scripts_dir / script_file
+        if file_path.exists():
+            files_to_upload.append((file_path, repo_name))
+        else:
+            print(f"⚠️  Missing processing script: {script_file}")
+    
     return files_to_upload
 
 @app.command()
@@ -94,6 +106,7 @@ def upload_dataset(
     core_files = []
     metadata_files = []
     doc_files = []
+    script_files = []
     
     for local_path, repo_path in files_to_upload:
         size_mb = local_path.stat().st_size / (1024 * 1024)
@@ -102,6 +115,8 @@ def upload_dataset(
             core_files.append((repo_path, size_mb))
         elif repo_path.endswith('.json'):
             metadata_files.append((repo_path, size_mb))
+        elif repo_path.endswith('.py'):
+            script_files.append((repo_path, size_mb))
         else:
             doc_files.append((repo_path, size_mb))
     
@@ -124,11 +139,18 @@ def upload_dataset(
         total_doc_size += size_mb
         print(f"  📄 {filename:<55} ({size_mb:>8.1f} MB)")
     
-    total_size = total_core_size + total_meta_size + total_doc_size
+    print(f"\n💻 **PROCESSING SCRIPTS**:")
+    total_script_size = 0
+    for filename, size_mb in script_files:
+        total_script_size += size_mb
+        print(f"  📄 {filename:<55} ({size_mb:>8.1f} MB)")
+    
+    total_size = total_core_size + total_meta_size + total_doc_size + total_script_size
     print(f"\n💾 **TOTAL SIZE**: {total_size:.1f} MB")
     print(f"   ├── Core data: {total_core_size:.1f} MB")
     print(f"   ├── Metadata: {total_meta_size:.1f} MB")
-    print(f"   └── Documentation: {total_doc_size:.1f} MB")
+    print(f"   ├── Documentation: {total_doc_size:.1f} MB")
+    print(f"   └── Scripts: {total_script_size:.1f} MB")
     
     if dry_run:
         print("\n🔍 DRY RUN - No files uploaded")

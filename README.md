@@ -26,7 +26,8 @@ Skeletal muscle aging is characterized by progressive loss of muscle mass and st
 
 **Original Study**: [Kedlian et al., Nature Aging 2024](https://www.nature.com/articles/s43587-024-00613-3)  
 **Interactive Atlas**: [muscleageingcellatlas.org](https://www.muscleageingcellatlas.org/)  
-**Code Repository**: [github.com/Teichlab/SKM_ageing_atlas](https://github.com/Teichlab/SKM_ageing_atlas)
+**Original Code Repository**: [github.com/Teichlab/SKM_ageing_atlas](https://github.com/Teichlab/SKM_ageing_atlas)  
+**Processing Repository**: [github.com/winternewt/muscle-ageing-cell-atlas](https://github.com/winternewt/muscle-ageing-cell-atlas) - contains data processing logic in `02_data_processing.py`
 
 ## 🎯 Dataset Overview
 
@@ -246,9 +247,37 @@ This dataset enables research across multiple domains:
 
 ---
 
+## 🛠️ Data Processing
+
+**Want to understand how this dataset was created?** The complete data processing pipeline is available in the repository:
+
+**📜 Processing Script**: [`data_processing.py`](data_processing.py) - Complete pipeline for converting raw H5AD files to HuggingFace-ready parquet format
+
+**Key Processing Steps**:
+- ✅ **Expression Matrix**: Sparse-to-dense conversion with memory optimization
+- ✅ **Metadata Processing**: Cell and gene annotation standardization  
+- ✅ **Dimensionality Reduction**: PCA, UMAP, t-SNE, scVI computation
+- ✅ **Quality Control**: Pandas index bug fixes and validation
+- ✅ **File Optimization**: Parquet compression and data type optimization
+
+**🔧 Technical Features**:
+- Memory-efficient chunked processing for large matrices (183K × 29K)
+- Automatic missing projection computation (PCA, t-SNE if needed)
+- Built-in quality validation and error handling
+- Comprehensive logging and progress tracking
+
+```bash
+# Run the processing pipeline
+python3 data_processing.py
+```
+
+*This transparency enables reproducibility and helps researchers understand data transformations applied to the original study data.*
+
+---
+
 ## 📁 Repository Contents
 
-This repository contains **12 files (1.6GB total)** organized into three categories:
+This repository contains **13 files (1.6GB total)** organized into four categories:
 
 ### **🗂️ Core Dataset Files (1.6GB)**
 *Essential files for machine learning and analysis*
@@ -271,6 +300,9 @@ This repository contains **12 files (1.6GB total)** organized into three categor
 ### **📚 Documentation Files**
 - `README.md` - **This comprehensive dataset documentation**
 - `LICENSE` - **MIT License for open research use**
+
+### **💻 Processing Scripts**
+- `data_processing.py` - **Complete data processing pipeline** (H5AD → Parquet conversion)
 
 ---
 
