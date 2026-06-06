@@ -79,6 +79,15 @@ def get_files_to_upload(base_path: Path) -> List[tuple[Path, str]]:
         else:
             print(f"⚠️  Missing processing script: {script_file}")
     
+    # HuggingFace dataset loading script (CRITICAL for proper dataset loading)
+    hf_loading_script = base_path / "skeletal_muscle_atlas.py"
+    if hf_loading_script.exists():
+        files_to_upload.append((hf_loading_script, "skeletal_muscle_atlas.py"))
+        print("✅ HuggingFace dataset loading script found")
+    else:
+        print("⚠️  CRITICAL: Missing HuggingFace dataset loading script (skeletal_muscle_atlas.py)")
+        print("    This script is required for users to properly load the dataset via load_dataset()")
+    
     return files_to_upload
 
 @app.command()

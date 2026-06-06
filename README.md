@@ -16,7 +16,33 @@ size_categories:
 - 100K<n<1M
 language:
 - en
+
+# Dataset configurations - separate parquet and json files
+configs:
+- config_name: default
+  data_files:
+    - split: expression
+      path: "skeletal_muscle_10x_expression.parquet"
+    - split: sample_metadata
+      path: "skeletal_muscle_10x_sample_metadata.parquet"
+    - split: feature_metadata
+      path: "skeletal_muscle_10x_feature_metadata.parquet"
+    - split: projection_pca
+      path: "skeletal_muscle_10x_projection_X_pca.parquet"
+    - split: projection_tsne
+      path: "skeletal_muscle_10x_projection_X_tsne.parquet"
+    - split: projection_umap
+      path: "skeletal_muscle_10x_projection_X_umap.parquet"
+    - split: projection_scvi
+      path: "skeletal_muscle_10x_projection_X_scVI.parquet"
+
+- config_name: metadata_json
+  data_files:
+    - split: unstructured_metadata
+      path: "skeletal_muscle_10x_unstructured_metadata.json"
 ---
+
+
 
 # 🧬 Human Skeletal Muscle Aging Atlas - 10X Chromium Dataset
 

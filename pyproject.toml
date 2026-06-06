@@ -19,6 +19,7 @@ dependencies = [
     "huggingface-hub>=0.33.0",
     "pyarrow>=20.0.0",
     "typer>=0.16.0",
+    "datasets>=3.6.0",
 ]
 
 [tool.uv.sources]
